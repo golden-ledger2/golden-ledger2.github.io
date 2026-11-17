@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>抖音风 PMV-节奏卡点与转场剪辑观察</title>
+<meta name="description" content="抖音风 PMV 是短视频节奏卡点剪辑的常见形态，围绕抖音风 PMV 的卡点结构、转场类型、素材配比与工具链，拆解从选曲到成片的具体流程，附示例条目、体验清单与常见问题。">
+<meta name="keywords" content="抖音风 pmv">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141a2b'/%3E%3Cpath d='M14 44 L26 22 L34 34 L42 18 L52 44' stroke='%2325f4ee' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='47' r='4' fill='%23ff2d6f'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0d1120;
+    --bg-soft:#141a2b;
+    --panel:#1a2135;
+    --panel-2:#212a42;
+    --line:#2b3550;
+    --text:#e8ecf7;
+    --muted:#98a3c0;
+    --cyan:#25f4ee;
+    --pink:#ff2d6f;
+    --gold:#ffcf5c;
+    --radius:14px;
+    --radius-sm:9px;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --fs-h1:clamp(1.9rem,4.4vw,3.1rem);
+    --fs-h2:clamp(1.3rem,2.4vw,1.65rem);
+    --fs-h3:1.06rem;
+    --space:clamp(16px,2.6vw,26px);
+    --maxw:1180px;
+    --anchor:132px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--anchor)}
+  body{
+    margin:0;background:
+      radial-gradient(1100px 520px at 82% -12%,rgba(255,45,111,.16),transparent 62%),
+      radial-gradient(900px 440px at 6% 0%,rgba(37,244,238,.13),transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.78;font-size:16px;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{max-width:100%}
+  h1,h2,h3{line-height:1.3;margin:0 0 .55em}
+  p{margin:0 0 .9em}
+  section{scroll-margin-top:var(--anchor)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(14px,3vw,28px)}
+  .skip{position:absolute;left:-999px;top:0;background:var(--cyan);color:#04121a;padding:8px 14px;border-radius:0 0 8px 0;z-index:200}
+  .skip:focus{left:0}
+
+  /* 吸顶公告 */
+  .announce{
+    position:sticky;top:0;z-index:60;
+    background:linear-gradient(90deg,rgba(37,244,238,.16),rgba(255,45,111,.2));
+    border-bottom:1px solid var(--line);
+    font-size:.86rem;color:#dfe6f7;
+  }
+  .announce .wrap{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+  .announce b{color:var(--gold);font-weight:600}
+  .announce .dot{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 3px rgba(255,45,111,.22);flex:none}
+
+  /* 页头 */
+  header.site{
+    position:sticky;top:37px;z-index:55;
+    background:rgba(13,17,32,.9);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .head{display:flex;align-items:center;gap:16px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px;flex:none;color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .brand svg{display:block}
+  .brand .bt{font-weight:700;font-size:1.02rem;letter-spacing:.5px}
+  .brand .bt small{display:block;font-size:.66rem;color:var(--muted);font-weight:400;letter-spacing:2px}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+  nav.main a{color:#cbd4ea;font-size:.88rem;padding:7px 10px;border-radius:8px;white-space:nowrap}
+  nav.main a:hover{background:var(--panel-2);color:#fff;text-decoration:none}
+  .head-tools{display:flex;align-items:center;gap:8px;flex:none}
+  .search{
+    display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);
+    border-radius:999px;padding:5px 10px;
+  }
+  .search input{
+    background:transparent;border:0;outline:0;color:var(--text);font-size:.85rem;width:118px;
+    font-family:inherit;
+  }
+  .search input::placeholder{color:#6f7c9d}
+  .search button{
+    background:transparent;border:0;color:var(--cyan);cursor:pointer;font-size:.85rem;padding:2px 4px;font-family:inherit;
+  }
+  .cta{
+    background:linear-gradient(135deg,var(--pink),#ff6a3d);color:#fff;border:0;border-radius:999px;
+    padding:8px 15px;font-size:.86rem;cursor:pointer;font-family:inherit;font-weight:600;white-space:nowrap;
+  }
+  .menu-btn{
+    display:none;background:var(--panel);border:1px solid var(--line);color:var(--text);
+    border-radius:9px;padding:7px 11px;font-size:.9rem;cursor:pointer;font-family:inherit;
+  }
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px}
+  .searchmsg{font-size:.82rem;color:var(--gold);padding:0 0 8px}
+
+  /* 首屏 */
+  .hero{padding:clamp(24px,4.5vw,52px) 0 clamp(18px,3vw,34px);position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,3.4vw,40px);align-items:center}
+  .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .tag{
+    font-size:.76rem;color:var(--cyan);border:1px solid rgba(37,244,238,.4);
+    background:rgba(37,244,238,.08);padding:3px 10px;border-radius:999px;
+  }
+  .tag.pk{color:#ffa7c0;border-color:rgba(255,45,111,.42);background:rgba(255,45,111,.1)}
+  h1{font-size:var(--fs-h1);letter-spacing:.5px}
+  h1 .hl{color:var(--cyan)}
+  .lede{color:#c3cce3;font-size:1.02rem;max-width:38em}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .btn{
+    display:inline-block;border-radius:999px;padding:10px 20px;font-size:.92rem;font-weight:600;
+    background:var(--cyan);color:#06121a;transition:transform .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);text-decoration:none}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .hero-stats{display:flex;gap:clamp(14px,3vw,34px);margin-top:24px;flex-wrap:wrap}
+  .hero-stats div b{display:block;font-size:1.4rem;color:var(--gold);line-height:1.2}
+  .hero-stats div span{font-size:.78rem;color:var(--muted)}
+  /* 首屏原创视觉 */
+  .beat-viz{
+    position:relative;background:linear-gradient(160deg,#161d31,#101528);
+    border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);
+  }
+  .beat-viz svg{display:block;width:100%;height:auto}
+  .beat-viz .cap{
+    display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);
+    margin-top:8px;letter-spacing:.6px;
+  }
+  .beat-viz .cap b{color:var(--cyan);font-weight:600}
+
+  /* 主体布局 */
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(18px,2.6vw,32px);padding-bottom:40px}
+  .main-col{min-width:0}
+  aside.side{min-width:0}
+  .side-inner{position:sticky;top:calc(var(--anchor) + 8px)}
+  .side-nav{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 12px;margin-bottom:16px}
+  .side-nav h2{font-size:.82rem;letter-spacing:2px;color:var(--muted);margin:0 0 10px;font-weight:600}
+  .side-nav a{
+    display:block;color:#c5cfe8;font-size:.88rem;padding:6px 10px;border-left:2px solid transparent;
+    border-radius:0 8px 8px 0;
+  }
+  .side-nav a:hover{background:var(--panel-2);color:#fff;text-decoration:none}
+  .side-nav a.active{border-left-color:var(--pink);background:rgba(255,45,111,.1);color:#fff}
+  .side-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:16px}
+  .side-card h3{font-size:.95rem;color:var(--gold)}
+  .side-card ol{margin:0;padding-left:18px;font-size:.86rem;color:#c0cae3}
+  .side-card ol li{margin-bottom:6px}
+  .side-card p{font-size:.85rem;color:#c0cae3;margin:0}
+
+  /* 板块通用 */
+  .block{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:clamp(16px,2.6vw,28px);margin-bottom:clamp(16px,2.6vw,26px);
+  }
+  .block > h2{font-size:var(--fs-h2);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .block > h2 .idx{
+    font-size:.76rem;color:var(--pink);border:1px solid rgba(255,45,111,.4);border-radius:6px;
+    padding:1px 7px;font-weight:600;letter-spacing:1px;
+  }
+  .sub{color:var(--muted);font-size:.88rem;margin:-.2em 0 1.1em}
+  .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .card{
+    background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:14px;transition:transform .18s ease,border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(37,244,238,.4)}
+  .card h3{font-size:var(--fs-h3);margin-bottom:6px}
+  .card p{font-size:.86rem;color:#bcc7e0;margin:0}
+  .meta{font-size:.76rem;color:var(--muted);margin-top:8px;display:flex;gap:10px;flex-wrap:wrap}
+  .meta b{color:var(--cyan);font-weight:600}
+  .list-c{list-style:none;margin:0;padding:0}
+  .list-c li{
+    display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--line);
+  }
+  .list-c li:last-child{border-bottom:0}
+  .list-c .no{
+    flex:none;font-size:.78rem;color:var(--gold);border:1px solid var(--line);border-radius:6px;
+    width:30px;height:30px;display:grid;place-items:center;font-variant-numeric:tabular-nums;
+  }
+  .list-c .li-body{min-width:0}
+  .list-c .li-body a{color:#e8ecf7;font-size:.94rem;font-weight:600}
+  .list-c .li-body p{font-size:.84rem;color:#aab6d2;margin:2px 0 0}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{
+    font-size:.82rem;color:#cfe0ff;background:rgba(37,244,238,.08);border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;
+  }
+  .chip:hover{border-color:var(--cyan);text-decoration:none;color:#fff}
+  .chip.pk{background:rgba(255,45,111,.1);color:#ffb6c9}
+  .steps{counter-reset:st;list-style:none;margin:0;padding:0}
+  .steps li{
+    counter-increment:st;position:relative;padding:0 0 18px 44px;border-left:1px solid var(--line);margin-left:14px;
+  }
+  .steps li:last-child{border-left-color:transparent;padding-bottom:0}
+  .steps li::before{
+    content:counter(st);position:absolute;left:-15px;top:-2px;width:29px;height:29px;border-radius:50%;
+    background:var(--bg-soft);border:1px solid var(--cyan);color:var(--cyan);display:grid;place-items:center;
+    font-size:.84rem;font-weight:700;
+  }
+  .steps li b{color:var(--gold)}
+  .steps li p{font-size:.88rem;color:#bcc7e0;margin:4px 0 0}
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+  .cmp > div{padding:14px}
+  .cmp .left{background:rgba(37,244,238,.06);border-right:1px solid var(--line)}
+  .cmp .right{background:rgba(255,45,111,.06)}
+  .cmp h3{font-size:.95rem;margin-bottom:8px}
+  .cmp ul{margin:0;padding-left:17px;font-size:.86rem;color:#bcc7e0}
+  .cmp li{margin-bottom:5px}
+  .quote{
+    border-left:3px solid var(--pink);background:var(--panel-2);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+    padding:14px 16px;font-size:.92rem;color:#d6ddf0;
+  }
+  .quote cite{display:block;font-size:.78rem;color:var(--muted);font-style:normal;margin-top:8px}
+  details.faq{
+    border:1px solid var(--line);border-radius:var(--radius-sm);background:var(--panel-2);
+    margin-bottom:10px;overflow:hidden;
+  }
+  details.faq summary{
+    cursor:pointer;padding:12px 15px;font-size:.93rem;font-weight:600;color:#e8ecf7;
+    list-style:none;position:relative;padding-right:38px;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{
+    content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--cyan);
+    font-size:1.1rem;font-weight:700;
+  }
+  details.faq[open] summary::after{content:"−"}
+  details.faq .ans{padding:0 15px 14px;font-size:.88rem;color:#bcc7e0}
+  details.faq .ans p:last-child{margin-bottom:0}
+  .comments{display:grid;gap:12px}
+  .cmt{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 14px}
+  .cmt .who{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-bottom:5px}
+  .cmt .who b{color:var(--cyan);font-weight:600}
+  .cmt p{font-size:.88rem;margin:0;color:#cfd7ea}
+  .cmt .up{color:var(--gold);font-size:.76rem;display:inline-block;margin-top:6px}
+  .newslist{list-style:none;margin:0;padding:0}
+  .newslist li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .newslist li:last-child{border-bottom:0}
+  .newslist .date{color:var(--muted);font-size:.78rem;margin-right:8px;font-variant-numeric:tabular-nums}
+  .tagcloud{display:flex;flex-wrap:wrap;gap:9px}
+  .tagcloud a{
+    font-size:.85rem;color:#cfe0ff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;
+    background:var(--panel-2);
+  }
+  .tagcloud a:hover{border-color:var(--pink);color:#fff;text-decoration:none}
+  .timeline{list-style:none;margin:0;padding:0 0 0 6px}
+  .timeline li{position:relative;padding:0 0 16px 20px;border-left:1px solid var(--line);font-size:.88rem;color:#bcc7e0}
+  .timeline li:last-child{border-left-color:transparent;padding-bottom:0}
+  .timeline li::before{content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--cyan)}
+  .timeline b{color:var(--gold)}
+  .score-table{width:100%;border-collapse:collapse;font-size:.86rem}
+  .score-table th,.score-table td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+  .score-table th{background:var(--panel-2);color:var(--cyan);font-weight:600}
+  .score-table td{color:#bcc7e0}
+  .inline-note{font-size:.82rem;color:var(--muted);border-left:2px solid var(--gold);padding-left:10px;margin:10px 0}
+  .depth h3{margin-top:1.3em;font-size:1.08rem;color:#eef2fb}
+  .depth h3:first-child{margin-top:0}
+  .depth p{font-size:.94rem;color:#c9d2e6}
+  .depth .cmp{margin:14px 0}
+  .factbox{
+    background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:12px 14px;font-size:.86rem;color:#bcc7e0;margin:12px 0;
+  }
+  .factbox b{color:var(--cyan)}
+  .example-img{display:block;width:100%;height:132px;object-fit:cover;border-radius:8px;margin-bottom:10px;border:1px solid var(--line)}
+
+  /* 页脚 */
+  footer.site{
+    border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(20,26,43,.7),#0a0e1a);
+    padding:30px 0 20px;margin-top:10px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:22px}
+  .foot-brand .bt{font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:8px}
+  .foot-brand p{font-size:.84rem;color:var(--muted);margin-top:8px;max-width:26em}
+  .foot-col h3{font-size:.82rem;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px}
+  .foot-col a{display:block;font-size:.84rem;color:#b6c2dd;padding:3px 0}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{
+    margin-top:24px;padding-top:14px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);
+  }
+  .totop{
+    position:fixed;right:18px;bottom:18px;z-index:70;width:44px;height:44px;border-radius:50%;
+    background:var(--pink);color:#fff;border:0;cursor:pointer;display:grid;place-items:center;
+    box-shadow:0 8px 22px rgba(255,45,111,.4);opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;
+    font-size:1.1rem;font-family:inherit;
+  }
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop:hover{transform:translateY(-3px)}
+
+  /* 响应式 */
+  @media (max-width:1000px){
+    .layout{grid-template-columns:1fr}
+    .side-inner{position:static}
+    aside.side .side-nav{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .head{padding:9px 0}
+    nav.main{
+      display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg-soft);
+      border-bottom:1px solid var(--line);padding:10px 16px 16px;flex-direction:column;align-items:stretch;
+    }
+    nav.main.open{display:flex}
+    nav.main a{padding:9px 8px;border-bottom:1px solid rgba(43,53,80,.6)}
+    .menu-btn{display:inline-block}
+    .search input{width:86px}
+    .two-col,.cmp{grid-template-columns:1fr}
+    .cmp .left{border-right:0;border-bottom:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr}
+    header.site{top:0}
+    :root{--anchor:96px}
+    .announce .wrap{font-size:.78rem;gap:6px}
+    .totop{right:12px;bottom:12px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <span><b>抖音风 pmv</b> 观察台 · 11 月 8 日更新：新增「双押点切镜」逐帧拆解，补录 6 条 10 月榜单条目</span>
+    <a href="/#updates">查看本周更新</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap head">
+    <a class="brand" href="/#top" aria-label="抖音风 pmv 首页">
+      <svg width="38" height="38" viewBox="0 0 64 64" role="img" aria-label="节奏波形标志">
+        <rect width="64" height="64" rx="14" fill="#1a2135"/>
+        <path d="M14 44 L26 22 L34 34 L42 18 L52 44" stroke="#25f4ee" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="47" r="3.6" fill="#ff2d6f"/>
+      </svg>
+      <span class="bt">抖音风 pmv<small>卡点编辑观察</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    <nav class="main" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#picks">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#depth">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#recommend">相关推荐</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search" role="search">
+        <input id="q" type="search" placeholder="搜条目/工具" aria-label="站内搜索">
+        <button id="searchBtn" type="button">查找</button>
+      </div>
+      <button class="cta" id="randomPick" type="button">随机看一条</button>
+    </div>
+  </div>
+  <div class="wrap"><p class="searchmsg" id="searchMsg" role="status" aria-live="polite"></p></div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="tag-row">
+          <span class="tag">卡点剪辑</span>
+          <span class="tag pk">转场结构</span>
+          <span class="tag">素材配比</span>
+        </div>
+        <h1>抖音风 <span class="hl">pmv</span></h1>
+        <p class="lede">把一首歌拆成 32 拍、把 90 秒素材压到 8 个镜头层，抖音风 PMV 的成品差距往往不在软件，而在拍点标注、镜头时长与遮罩转场的对位精度。这里按条目记录具体剪辑手法与出处。</p>
+        <div class="hero-actions">
+          <a class="btn" href="/#depth">读卡点结构解析</a>
+          <a class="btn ghost" href="/#guide">看 6 步上手流程</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>128</b><span>条目收录</span></div>
+          <div><b>32</b><span>拍点模板</span></div>
+          <div><b>11-08</b><span>最近核对</span></div>
+        </div>
+      </div>
+      <div class="beat-viz" aria-hidden="true">
+        <svg viewBox="0 0 360 220" role="img" aria-label="卡点波形与镜头切换示意">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#25f4ee"/><stop offset="1" stop-color="#ff2d6f"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="360" height="220" fill="#101528"/>
+          <g stroke="#2b3550" stroke-width="1">
+            <line x1="0" y1="55" x2="360" y2="55"/><line x1="0" y1="110" x2="360" y2="110"/><line x1="0" y1="165" x2="360" y2="165"/>
+          </g>
+          <path d="M8 130 L30 130 L40 62 L52 168 L64 96 L78 130 L96 130 L108 48 L120 178 L134 100 L150 130 L168 130 L180 70 L192 160 L206 104 L222 130 L240 130 L252 44 L264 180 L278 98 L294 130 L312 130 L324 66 L336 164 L352 130"
+            fill="none" stroke="url(#g1)" stroke-width="3" stroke-linejoin="round"/>
+          <g fill="#ffcf5c">
+            <circle cx="108" cy="48" r="4"/><circle cx="252" cy="44" r="4"/><circle cx="324" cy="66" r="4"/>
+          </g>
+          <g font-family="monospace" font-size="10" fill="#98a3c0">
+            <text x="8" y="206">0s</text><text x="158" y="206">15s</text><text x="310" y="206">30s</text>
+          </g>
+          <g fill="#25f4ee" font-family="monospace" font-size="10">
+            <text x="92" y="38">拍点</text><text x="236" y="34">重拍</text><text x="308" y="56">切镜</text>
+          </g>
+        </svg>
+        <div class="cap"><span>波形对齐 · <b>32 拍</b></span><span>镜头层 <b>8</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="main-col">
+
+      <section class="block" id="overview">
+        <h2><span class="idx">01</span>领域概览：卡点剪辑的三种常见形态</h2>
+        <p class="sub">按素材来源、节奏密度和叙事强度区分，判断一条成片属于哪一类，先看它的镜头平均时长。</p>
+        <div class="grid-cards">
+          <div class="card">
+            <h3>单曲全段卡点</h3>
+            <p>整首 BGM 覆盖全片，镜头平均 0.9—1.4 秒一刀，重拍处插入闪白或缩放。适合舞蹈混剪与游戏高光。</p>
+            <div class="meta"><span>典型时长 <b>28—45 秒</b></span></div>
+          </div>
+          <div class="card">
+            <h3>遮罩转场流</h3>
+            <p>用旋转、抛出、物体遮挡完成镜头切换，卡点在转场终点而非起点。素材要求同一运动方向。</p>
+            <div class="meta"><span>难点 <b>运动轨迹连续</b></span></div>
+          </div>
+          <div class="card">
+            <h3>文字叙事型</h3>
+            <p>以字幕轴推进，画面服务于句读。拍点密度降低到 2—3 秒，靠文字停顿做呼吸。</p>
+            <div class="meta"><span>常用工具 <b>剪映 + 会声会影</b></span></div>
+          </div>
+        </div>
+        <div class="two-col" style="margin-top:16px">
+          <div>
+            <h3>判断一条片子是否“卡得准”</h3>
+            <p>先看鼓点与切点是否同帧。用 Pr 的时间轴放大到帧级，差 2—3 帧在手机端可接受，差 5 帧以上在高刷屏上能看出提前。</p>
+          </div>
+          <div>
+            <h3>常见误区</h3>
+            <p>把所有切点都压在同一条波形上，会让节奏变平。10 月 26 日 B 站账号「帧率研究所」的对比视频里，重拍保留 1 拍留白，观感评价反而更高。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="picks">
+        <h2><span class="idx">02</span>精选内容推荐</h2>
+        <p class="sub">按可复现性筛选，条目均给出素材类型与卡点密度，方便直接对照练习。</p>
+        <div class="grid-cards">
+          <div class="card">
+            <img class="example-img" src="https://picsum.photos/seed/pmv-beat-cut/560/260" alt="时间轴上排列的鼓点切点与镜头块" width="560" height="260" loading="lazy">
+            <h3>《鼓点跳切》32 拍模板</h3>
+            <p>适用于 128 BPM 电子乐。每 4 拍一组，组内用 3 次跳切加 1 次留白，字幕放右侧 1/3 区。</p>
+            <div class="meta"><span>素材 <b>舞蹈</b></span><span>难度 <b>中</b></span></div>
+          </div>
+          <div class="card">
+            <h3>游戏高光遮罩转场</h3>
+            <p>用枪口闪光做遮罩点，转场耗时 6 帧。10 月 18 日抖音账号「老猫剪片」发布完整场记表。</p>
+            <div class="meta"><span>素材 <b>FPS 录像</b></span><span>难度 <b>高</b></span></div>
+          </div>
+          <div class="card">
+            <h3>城市夜景律动混剪</h3>
+            <p>拍点密度 1.2 秒，靠车流方向引导视线。适合用 Pr 的「变形稳定器」处理手持素材。</p>
+            <div class="meta"><span>素材 <b>实拍</b></span><span>难度 <b>低</b></span></div>
+          </div>
+          <div class="card">
+            <h3>双押点切镜逐帧拆解</h3>
+            <p>11 月 6 日新增条目：同一小节两个押韵点连续切镜，镜头时长压到 0.4 秒，需预渲染防丢帧。</p>
+            <div class="meta"><span>新增 <b>11-06</b></span><span>难度 <b>高</b></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="updates">
+        <h2><span class="idx">03</span>最新更新</h2>
+        <p class="sub">按发布时间倒序排列，每条对应一个可核对的改动或新增条目。</p>
+        <ul class="newslist">
+          <li><span class="date">11-08</span>「双押点切镜」拆解补入逐帧截图，标注第 7 帧与第 13 帧的切点误差。</li>
+          <li><span class="date">11-06</span>新增夜间素材噪点处理条目，引用达芬奇 18.6 的降噪节点参数。</li>
+          <li><span class="date">11-03</span>10 月榜单更新，前 3 名替换 2 条，原因在榜单板块列出。</li>
+          <li><span class="date">10-29</span>FAQ 增加「拍点对齐到帧还是到毫秒」，附剪映吸附设置路径。</li>
+          <li><span class="date">10-24</span>补录 6 条 10 月中旬发布的卡点模板，来源均标注账号与日期。</li>
+          <li><span class="date">10-18</span>体验指南第 4 步改写，区分手机端与桌面端的时间轴缩放差异。</li>
+        </ul>
+      </section>
+
+      <section class="block" id="channels">
+        <h2><span class="idx">04</span>分类入口</h2>
+        <p class="sub">按用途划分的频道，点击可跳到对应条目集合。</p>
+        <div class="chips">
+          <a class="chip" href="/#picks">节奏卡点模板</a>
+          <a class="chip" href="/#depth">遮罩转场拆解</a>
+          <a class="chip" href="/#guide">剪映关键帧教程</a>
+          <a class="chip pk" href="/#depth">双押点切镜</a>
+          <a class="chip" href="/#picks">游戏高光混剪</a>
+          <a class="chip" href="/#guide">素材降噪处理</a>
+          <a class="chip pk" href="/#rank">月度榜单</a>
+          <a class="chip" href="/#faq">拍点对齐问题</a>
+          <a class="chip" href="/#comments">创作者反馈</a>
+          <a class="chip" href="/#news">行业动态</a>
+          <a class="chip" href="/#recommend">工具与插件</a>
+        </div>
+      </section>
+
+      <section class="block depth" id="depth">
+        <h2><span class="idx">05</span>深度解析：卡点精度到底由什么决定</h2>
+        <p class="sub">拆成三个可核对的中段：切点误差、素材运动方向、导出帧率。每个判断都给出对照条件。</p>
+
+        <h3>一、切点误差 3 帧以内，观众分不出，但重拍必须压到 1 帧</h3>
+        <p>用 Pr 把同一段 128 BPM 音乐放慢到 25% 播放，鼓点峰值落在第 22 帧。10 月 21 日「帧率研究所」上传的 A/B 对比里，切点在第 24 帧的版本，在 60Hz 屏幕上被 7 位观众中的 5 位判为“慢半拍”；切点在第 23 帧的版本只有 1 位。差别只有 1 帧，结论是：普通拍点允许 2—3 帧误差，但每小节第一个重拍必须落在峰值帧或前 1 帧。</p>
+        <div class="factbox"><b>核对方法：</b>时间轴放大到帧，按住 Shift 逐帧移动切点，听鼓皮击打声与画面动作起点是否同步。剪映的「吸附」在 30fps 工程里精度约 1 帧，超过 30fps 需关掉吸附手动微调。</div>
+
+        <h3>二、遮罩转场失败，多半是运动方向不一致，不是遮罩没画对</h3>
+        <p>拿两条素材做对照：A 素材人物从右向左挥手，B 素材人物从左向右转身。用同一套旋转遮罩，A→B 的接缝处出现明显跳跃，B→A 则顺畅。10 月 18 日「老猫剪片」的场记表里，把 12 次转场按方向分组，同向转场的成片回看完成率高出 34%。</p>
+        <div class="cmp">
+          <div class="left">
+            <h3>同向转场</h3>
+            <ul>
+              <li>运动向量夹角小于 30 度</li>
+              <li>遮罩边界可落在肢体上</li>
+              <li>平均调整次数 2.1 次</li>
+            </ul>
+          </div>
+          <div class="right">
+            <h3>反向转场</h3>
+            <ul>
+              <li>需要额外加运动模糊补偿</li>
+              <li>接缝处易出现双影</li>
+              <li>平均调整次数 5.4 次</li>
+            </ul>
+          </div>
+        </div>
+        <p>这条判断可以被反驳：11 月 2 日抖音账号「剪刀手阿澈」用反向转场做了 0.3 秒的甩镜，靠高速模糊盖住接缝，成片点赞 4.2 万。条件是模糊半径够大、转场时间够短。换个 1 秒的反向转场，同一手法就不成立。</p>
+
+        <h3>三、导出帧率与工程帧率不一致，会让卡点整体偏移</h3>
+        <p>工程设为 25fps、导出选 60fps，时间轴上的第 22 帧会被重采样，鼓点位置在成片里往后挪约 0.2 秒。10 月 29 日有用户在剪映社区贴出对比：25fps 工程直出与 60fps 导出，同一段 8 秒片子的峰值位置差 6 帧。规避方式是工程帧率与素材帧率一致，导出时只升采样不做时间重映射。</p>
+        <div class="inline-note">推测：高刷屏普及后，1—2 帧的误差会被更多观众察觉。目前缺少公开的观众感知数据，这条不下定论。</div>
+      </section>
+
+      <section class="block" id="guide">
+        <h2><span class="idx">06</span>体验指南：从选曲到成片的 6 步</h2>
+        <p class="sub">按桌面端 Pr 与手机端剪映两条路径给参数，步骤顺序不可调换。</p>
+        <ol class="steps">
+          <li><b>标拍点</b><p>导入音频，用「标记」在每小节第一拍打点，再补 4 分音符。128 BPM 的曲子，一小节约 1.875 秒。</p></li>
+          <li><b>定镜头时长</b><p>普通拍 0.9—1.4 秒，重拍留 0.3 秒空白或闪白。先粗排再精修，别一开始就帧级对齐。</p></li>
+          <li><b>筛素材方向</b><p>按人物运动方向分文件夹，左向、右向、纵向各一组。遮罩转场只从同向组里挑。</p></li>
+          <li><b>加转场</b><p>遮罩转场耗时控制在 4—8 帧。剪映用「蒙版」打关键帧，Pr 用轨道遮罩键。</p></li>
+          <li><b>调色统一</b><p>10 月 24 日条目给出 LUT：夜景素材降饱和 12%，高光下压 0.15。避免各镜头色温跳变打断节奏。</p></li>
+          <li><b>导出核对</b><p>工程帧率与素材一致再导出。成片回放到 0.25 倍速，逐段听鼓点对切点。</p></li>
+        </ol>
+      </section>
+
+      <section class="block" id="faq">
+        <h2><span class="idx">07</span>常见问题</h2>
+        <p class="sub">问题来自 10 月下旬的收藏夹与评论区整理，答案只讲操作和条件。</p>
+
+        <details class="faq">
+          <summary>拍点应该对齐到帧还是对齐到毫秒？</summary>
+          <div class="ans"><p>对齐到帧。剪辑软件的时间轴以帧为最小单位，毫秒级设置会被自动吸附。30fps 工程里 1 帧约 33.3 毫秒，对准帧边界即可，不要迷信毫秒数值。</p></div>
+        </details>
+        <details class="faq">
+          <summary>剪映的自动踩点能直接用于抖音风 PMV 吗？</summary>
+          <div class="ans"><p>可以打底，但要手动修。自动踩点在鼓点密集段落会漏标，10 月 29 日的对比测试里，128 BPM 曲子漏标率约 18%。建议自动标完再逐小节核对，重拍处手动补点。</p></div>
+        </details>
+        <details class="faq">
+          <summary>素材只有 24fps，工程设 60fps 会怎样？</summary>
+          <div class="ans"><p>会出现重复帧。卡点时切点可能落在重复帧上，观感偏顿。要么工程设 24fps，要么给素材补运动模糊再升采样。</p></div>
+        </details>
+        <details class="faq">
+          <summary>遮罩转场需要绿幕吗？</summary>
+          <div class="ans"><p>不需要。物体遮挡、旋转、甩镜都能做遮罩，关键是前后镜头的运动方向一致。绿幕只解决抠像问题，不解决节奏问题。</p></div>
+        </details>
+        <details class="faq">
+          <summary>一条 30 秒的卡点片大概要剪多久？</summary>
+          <div class="ans"><p>熟练者 2—3 小时，含标拍、粗排、转场、调色。新手前 3 条通常 6 小时以上，时间主要耗在素材筛选，不是软件操作。</p></div>
+        </details>
+        <details class="faq">
+          <summary>为什么导出的片子颜色比时间轴里暗？</summary>
+          <div class="ans"><p>多半是色彩空间设置不一致。Pr 导出选 Rec.709，剪映检查「色彩空间」是否为 sRGB。10 月 30 日社区有用户贴出同一素材在两种设置下的亮度差，约 8%。</p></div>
+        </details>
+      </section>
+
+      <section class="block" id="comments">
+        <h2><span class="idx">08</span>创作者反馈</h2>
+        <p class="sub">来自条目评论与私信，保留原话语气，吐槽与肯定都收。</p>
+        <div class="comments">
+          <div class="cmt">
+            <div class="who"><b>@阿澈</b><span>11-06 评论于「双押点切镜」</span></div>
+            <p>0.4 秒一刀是真的狠，我 24fps 的素材切出来全是重复帧，最后还是老老实实重拍了一遍 60fps。</p>
+            <span class="up">有用 32</span>
+          </div>
+          <div class="cmt">
+            <div class="who"><b>@夜班剪手</b><span>11-04 评论于「城市夜景律动混剪」</span></div>
+            <p>变形稳定器那段写得对，手持素材别硬升格，先稳再切，不然卡点全是糊的。这条我存了。</p>
+            <span class="up">有用 18</span>
+          </div>
+          <div class="cmt">
+            <div class="who"><b>@帧率研究所</b><span>11-02 评论于深度解析</span></div>
+            <p>反向转场那段我保留意见。模糊半径拉到 40 以上，接缝基本看不见，关键还是转场时长压得够短。</p>
+            <span class="up">有用 25</span>
+          </div>
+          <div class="cmt">
+            <div class="who"><b>@小满剪辑</b><span>10-31 评论于「遮罩转场拆解」</span></div>
+            <p>场记表里的方向分组挺实用，但 12 次转场样本有点少，结论看看就行，别当公式背。</p>
+            <span class="up">有用 9</span>
+          </div>
+          <div class="cmt">
+            <div class="who"><b>@橘子汽水</b><span>10-27 评论于体验指南</span></div>
+            <p>第 4 步写「转场 4—8 帧」，我按 8 帧做出来还是拖，后来看原片是 5 帧。参数得自己试，别照抄。</p>
+            <span class="up">有用 14</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block" id="news">
+        <h2><span class="idx">09</span>相关资讯</h2>
+        <p class="sub">工具版本、社区活动与平台规则变化，本板块只记录时间与出处。</p>
+        <ul class="newslist">
+          <li><span class="date">11-07</span>达芬奇 18.6.2 发布，降噪节点在低照度素材上的处理速度较 18.6 提升约 20%，来源 Blackmagic 官方发布说明。</li>
+          <li><span class="date">11-01</span>剪映更新「智能踩点」入口位置，从音频面板移到右键菜单，旧教程路径失效。</li>
+          <li><span class="date">10-26</span>B 站「帧率研究所」发布 60Hz 与 120Hz 屏幕下卡点感知对比，样本 7 人，结论偏初步。</li>
+          <li><span class="date">10-22</span>某素材站上线 128 BPM 电子乐分类，标注了可商用授权范围，需逐首核对。</li>
+        </ul>
+      </section>
+
+      <section class="block" id="rank">
+        <h2><span class="idx">10</span>十月榜单：按可复现性排序</h2>
+        <p class="sub">评分维度固定为四项，满分 5 分。样本为 10 月收录的 41 条模板。</p>
+        <table class="score-table">
+          <thead><tr><th>条目</th><th>卡点精度</th><th>转场完成度</th><th>素材门槛</th><th>复现评分</th></tr></thead>
+          <tbody>
+            <tr><td>鼓点跳切 32 拍模板</td><td>4.6</td><td>4.1</td><td>低</td><td>4.4</td></tr>
+            <tr><td>游戏高光遮罩转场</td><td>4.2</td><td>4.7</td><td>高</td><td>4.0</td></tr>
+            <tr><td>城市夜景律动混剪</td><td>3.9</td><td>3.6</td><td>低</td><td>3.9</td></tr>
+            <tr><td>双押点切镜（11-06 新增）</td><td>4.8</td><td>4.4</td><td>高</td><td>4.2</td></tr>
+          </tbody>
+        </table>
+        <p class="inline-note">排名依据写清：卡点精度按帧级误差均值折算，转场完成度按接缝可见度打分，素材门槛按所需拍摄设备估价分层。三项外没有加权项。</p>
+      </section>
+
+      <section class="block" id="recommend">
+        <h2><span class="idx">11</span>相关推荐</h2>
+        <p class="sub">按你可能会搜的词归组，标签直连对应板块。</p>
+        <div class="tagcloud">
+          <a href="/#guide">剪映关键帧怎么做遮罩</a>
+          <a href="/#depth">128 BPM 卡点切点误差</a>
+          <a href="/#guide">24fps 素材升 60fps</a>
+          <a href="/#picks">游戏高光混剪模板</a>
+          <a href="/#faq">达芬奇降噪参数</a>
+          <a href="/#rank">卡点模板复现评分</a>
+          <a href="/#depth">反向转场运动模糊</a>
+          <a href="/#comments">遮罩转场失败原因</a>
+          <a href="/#updates">双押点切镜逐帧</a>
+          <a href="/#guide">导出帧率与工程帧率</a>
+          <a href="/#news">剪映智能踩点入口</a>
+        </div>
+      </section>
+
+      <section class="block" id="timeline">
+        <h2><span class="idx">12</span>条目时间线：10 月下旬到 11 月初</h2>
+        <p class="sub">只打点出现新条目或结论被修正的日期，省略日常维护。</p>
+        <ul class="timeline">
+          <li><b>10-18</b> 场记表发布，12 次转场按方向分组，成为后续对照基准。</li>
+          <li><b>10-21</b> 切点误差 A/B 对比上传，3 帧阈值首次被量化。</li>
+          <li><b>10-26</b> 高刷屏感知测试发布，样本 7 人。</li>
+          <li><b>11-02</b> 反向转场的反驳案例出现，模糊半径条件被补上。</li>
+          <li><b>11-06</b> 双押点切镜条目新增，切点压到 0.4 秒。</li>
+          <li><b>11-08</b> 逐帧截图补齐，本轮核对完成。</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <aside class="side" aria-label="侧栏">
+      <div class="side-inner">
+        <nav class="side-nav" aria-label="页内目录">
+          <h2>页内目录</h2>
+          <a href="/#overview">01 领域概览</a>
+          <a href="/#picks">02 精选推荐</a>
+          <a href="/#updates">03 最新更新</a>
+          <a href="/#channels">04 分类入口</a>
+          <a href="/#depth">05 深度解析</a>
+          <a href="/#guide">06 体验指南</a>
+          <a href="/#faq">07 常见问题</a>
+          <a href="/#comments">08 创作者反馈</a>
+          <a href="/#news">09 相关资讯</a>
+          <a href="/#rank">10 十月榜单</a>
+          <a href="/#recommend">11 相关推荐</a>
+          <a href="/#timeline">12 时间线</a>
+        </nav>
+        <div class="side-card">
+          <h3>本周最多收藏</h3>
+          <ol>
+            <li>双押点切镜逐帧拆解</li>
+            <li>鼓点跳切 32 拍模板</li>
+            <li>反向转场模糊半径测试</li>
+          </ol>
+        </div>
+        <div class="side-card">
+          <h3>一句话提醒</h3>
+          <p>导出前先看工程帧率。10 月 29 日的对比里，25fps 工程直出与 60fps 导出的峰值位置差 6 帧。</p>
+        </div>
+        <div class="side-card">
+          <h3>数据说明</h3>
+          <p>条目与评论均为示例数据，引用账号与日期用于标注来源层级，不代表真实发布记录。</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="bt">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1a2135"/>
+            <path d="M14 44 L26 22 L34 34 L42 18 L52 44" stroke="#25f4ee" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          抖音风 pmv
+        </div>
+        <p>记录卡点节奏、遮罩转场与素材配比的可核对条目，服务剪辑练习与复盘。</p>
+      </div>
+      <div class="foot-col">
+        <h3>内容栏目</h3>
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#channels">分类入口</a>
+      </div>
+      <div class="foot-col">
+        <h3>深度与指南</h3>
+        <a href="/#depth">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#rank">十月榜单</a>
+      </div>
+      <div class="foot-col">
+        <h3>互动与资讯</h3>
+        <a href="/#comments">创作者反馈</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">条目时间线</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>全站条目、评论与账号名均为示例数据，仅用于展示内容结构。页脚更新于 2026-11-08，对应「双押点切镜逐帧拆解」补录。</span>
+      <span>© 2026 抖音风 pmv 观察台 · 示例站点</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  // 移动端菜单
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 760){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // 搜索：本地查找文本块
+  var q = document.getElementById('q');
+  var msg = document.getElementById('searchMsg');
+  var searchBtn = document.getElementById('searchBtn');
+  var blocks = Array.prototype.slice.call(document.querySelectorAll('.main-col .block'));
+
+  function runSearch(){
+    var kw = q.value.trim().toLowerCase();
+    blocks.forEach(function(b){ b.style.outline = ''; });
+    if(!kw){ msg.textContent = ''; return; }
+    var hits = [];
+    blocks.forEach(function(b){
+      if(b.textContent.toLowerCase().indexOf(kw) !== -1){
+        hits.push(b);
+        b.style.outline = '1px solid rgba(37,244,238,.55)';
+      }
+    });
+    if(hits.length === 0){
+      msg.textContent = '没有找到「' + q.value.trim() + '」，可试试：双押点、遮罩、拍点、帧率、降噪。';
+    } else {
+      msg.textContent = '找到 ' + hits.length + ' 个板块含「' + q.value.trim() + '」，首个已高亮。';
+      var first = hits[0];
+      var y = first.getBoundingClientRect().top + window.pageYOffset - 140;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+  }
+  searchBtn.addEventListener('click', runSearch);
+  q.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); runSearch(); } });
+  q.addEventListener('input', function(){ if(!q.value.trim()){ msg.textContent=''; blocks.forEach(function(b){ b.style.outline=''; }); } });
+
+  // 随机条目
+  var picks = ['#picks','#depth','#guide','#faq','#rank','#timeline'];
+  document.getElementById('randomPick').addEventListener('click', function(){
+    var id = picks[Math.floor(Math.random()*picks.length)];
+    var el = document.querySelector(id);
+    if(el){
+      var y = el.getBoundingClientRect().top + window.pageYOffset - 140;
+      window.scrollTo({top:y, behavior:'smooth'});
+    }
+  });
+
+  // 侧栏高亮
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('.side-nav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').split('#')[1];
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function highlight(){
+    var pos = window.pageYOffset + 170;
+    var current = null;
+    targets.forEach(function(t){
+      if(t.offsetTop <= pos) current = t.id;
+    });
+    sideLinks.forEach(function(a){
+      var on = a.getAttribute('href') === '/#' + current;
+      a.classList.toggle('active', on);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+
+  // 回到顶部
+  var totop = document.getElementById('totop');
+  window.addEventListener('scroll', function(){
+    if(window.pageYOffset > 500){ totop.classList.add('show'); }
+    else { totop.classList.remove('show'); }
+  }, {passive:true});
+  totop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"抖音风 pmv",
+  "inLanguage":"zh-CN",
+  "description":"围绕抖音风 PMV 的卡点节奏、遮罩转场与素材配比整理的可核对条目与拆解。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"拍点应该对齐到帧还是对齐到毫秒？","acceptedAnswer":{"@type":"Answer","text":"对齐到帧。剪辑软件时间轴以帧为最小单位，毫秒级设置会被自动吸附。30fps 工程里 1 帧约 33.3 毫秒，对准帧边界即可。"}},
+    {"@type":"Question","name":"剪映的自动踩点能直接用于抖音风 PMV 吗？","acceptedAnswer":{"@type":"Answer","text":"可以打底，但需手动修。128 BPM 曲子自动踩点漏标率约 18%，重拍处要补点。"}},
+    {"@type":"Question","name":"素材只有 24fps，工程设 60fps 会怎样？","acceptedAnswer":{"@type":"Answer","text":"会出现重复帧，切点可能落在重复帧上导致观感偏顿。建议工程帧率与素材一致。"}},
+    {"@type":"Question","name":"遮罩转场需要绿幕吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。物体遮挡、旋转、甩镜都能做遮罩，关键是前后镜头运动方向一致。"}},
+    {"@type":"Question","name":"一条 30 秒的卡点片大概要剪多久？","acceptedAnswer":{"@type":"Answer","text":"熟练者 2—3 小时，含标拍、粗排、转场与调色；新手前 3 条通常 6 小时以上。"}},
+    {"@type":"Question","name":"为什么导出的片子颜色比时间轴里暗？","acceptedAnswer":{"@type":"Answer","text":"多为色彩空间设置不一致。Pr 导出选 Rec.709，剪映检查色彩空间是否为 sRGB。"}}
+  ]
+}
+</script>
+</body>
+  </html>
