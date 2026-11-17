@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>铁粉空间微密圈免费-粉丝社区内容与加入指南</title>
+<meta name="description" content="铁粉空间微密圈免费，整理粉丝私域社区的免费圈子入口、内容分类与加入规则。涵盖创作者圈子对比、付费与免费差异、互动玩法、常见疑问解答与用户真实评价，帮助新粉丝快速判断哪个圈子值得长期停留。">
+<meta name="keywords" content="铁粉空间微密圈免费">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8543f'/%3E%3Ccircle cx='32' cy='30' r='13' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%23fff'/%3E%3Cpath d='M20 52c3-7 8-10 12-10s9 3 12 10' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#e8543f;
+  --brand-deep:#b8341f;
+  --brand-soft:#fdeeea;
+  --ink:#22201d;
+  --ink-2:#4a4640;
+  --ink-3:#7a746b;
+  --line:#e6e0d8;
+  --bg:#fbf8f4;
+  --card:#ffffff;
+  --gold:#c8951f;
+  --teal:#2f6e63;
+  --radius:14px;
+  --radius-s:8px;
+  --shadow:0 2px 10px rgba(60,45,30,.07);
+  --shadow-l:0 10px 30px rgba(60,45,30,.10);
+  --gap:22px;
+  --max:1180px;
+  --ann-h:38px;
+  --head-h:64px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 10px)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;margin:0}
+p{margin:0 0 .85em}
+ul,ol{margin:0 0 .85em;padding-left:1.3em}
+li{margin-bottom:.35em}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ===== 吸顶公告条 ===== */
+.annbar{
+  position:sticky;top:0;z-index:60;background:var(--ink);color:#f3ece2;
+  font-size:13.5px;height:var(--ann-h);display:flex;align-items:center;
+}
+.annbar .wrap{display:flex;align-items:center;gap:12px;width:100%;overflow:hidden}
+.annbar .tag{
+  flex:0 0 auto;background:var(--brand);color:#fff;font-size:11.5px;
+  padding:1px 8px;border-radius:999px;letter-spacing:.06em;font-weight:600;
+}
+.annbar .txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.annbar .txt b{color:#ffd9a8;font-weight:600}
+.annbar a{color:#ffd9a8;white-space:nowrap;flex:0 0 auto}
+
+/* ===== 吸顶页头 ===== */
+.head{
+  position:sticky;top:var(--ann-h);z-index:55;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  height:var(--head-h);display:flex;align-items:center;
+}
+.head .wrap{display:flex;align-items:center;gap:18px;width:100%}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;color:var(--ink)}
+.brand:hover{text-decoration:none}
+.brand .mark{width:34px;height:34px;flex:0 0 auto}
+.brand .bname{font-weight:800;font-size:17.5px;letter-spacing:.02em;white-space:nowrap}
+.nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.nav a{
+  color:var(--ink-2);font-size:14.5px;padding:6px 10px;border-radius:8px;white-space:nowrap;
+}
+.nav a:hover{background:var(--brand-soft);color:var(--brand-deep);text-decoration:none}
+.head-tools{margin-left:auto;display:flex;align-items:center;gap:10px}
+.searchbox{position:relative;display:flex;align-items:center}
+.searchbox input{
+  width:180px;border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:7px 12px 7px 32px;font-size:13.5px;font-family:inherit;color:var(--ink);
+}
+.searchbox svg{position:absolute;left:10px;width:15px;height:15px;opacity:.5;pointer-events:none}
+.searchbox input:focus{width:210px;border-color:var(--brand);outline:none;box-shadow:0 0 0 3px var(--brand-soft)}
+.search-feedback{
+  position:absolute;top:calc(100% + 6px);right:0;width:270px;background:#fff;
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-l);
+  font-size:13px;color:var(--ink-2);padding:10px 12px;display:none;z-index:70;
+}
+.search-feedback.show{display:block}
+.search-feedback b{color:var(--brand-deep)}
+.btn{
+  display:inline-flex;align-items:center;gap:6px;border-radius:999px;font-size:14px;
+  padding:8px 16px;border:1px solid transparent;cursor:pointer;font-family:inherit;
+  transition:transform .15s,background .15s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-deep)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep)}
+.menu-btn{
+  display:none;background:#fff;border:1px solid var(--line);border-radius:9px;
+  width:40px;height:36px;align-items:center;justify-content:center;cursor:pointer;
+}
+.menu-btn span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+.menu-btn span::before,.menu-btn span::after{
+  content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);
+}
+.menu-btn span::before{top:-6px}
+.menu-btn span::after{top:6px}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  background:linear-gradient(160deg,#fff8f2 0%,#fdf1ea 45%,#fbf8f4 100%);
+}
+.hero .wrap{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  padding-top:48px;padding-bottom:52px;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f3d9cb;
+  color:var(--brand-deep);border-radius:999px;padding:4px 13px;font-size:13px;font-weight:600;
+  margin-bottom:16px;box-shadow:var(--shadow);
+}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--brand);display:block}
+.hero h1{font-size:clamp(28px,3.6vw,44px);letter-spacing:.01em;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--brand-deep);border-bottom:4px solid #f8cfbe;padding-bottom:2px}
+.hero-lead{font-size:16.5px;color:var(--ink-2);max-width:34em;margin-bottom:22px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;border-top:1px dashed #e2d3c6;padding-top:18px}
+.hero-stats div{font-size:13px;color:var(--ink-3)}
+.hero-stats strong{display:block;font-size:22px;color:var(--ink);font-weight:800;line-height:1.25}
+.hero-visual{position:relative;min-height:320px}
+.hero-visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 16px 30px rgba(150,80,50,.16))}
+.hero-note{
+  position:absolute;right:2%;bottom:2%;background:#fff;border:1px solid var(--line);
+  border-radius:12px;padding:9px 13px;font-size:12.5px;color:var(--ink-2);
+  box-shadow:var(--shadow-l);max-width:190px;line-height:1.55;
+}
+.hero-note b{color:var(--brand-deep);display:block;font-size:13px}
+
+/* ===== 主区骨架：左栏单栏 + 右栏侧栏 ===== */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--gap);padding-top:38px;padding-bottom:48px}
+.maincol{min-width:0}
+.side{min-width:0}
+.side-sticky{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 18px)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.sec{padding:26px 26px 24px;margin-bottom:var(--gap)}
+.sec-head{display:flex;align-items:flex-end;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.sec-head h2{font-size:21.5px;letter-spacing:.01em}
+.sec-head .sub{font-size:13px;color:var(--ink-3);margin-left:auto}
+.sec-tag{
+  font-size:11.5px;letter-spacing:.08em;color:var(--brand-deep);background:var(--brand-soft);
+  border-radius:5px;padding:2px 7px;font-weight:700;
+}
+.lead-p{color:var(--ink-2);font-size:15.5px;margin-bottom:16px}
+
+/* 概览：非对称组合 */
+.overview{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.ov-fact{background:#fdfaf6;border:1px solid var(--line);border-radius:var(--radius-s);padding:16px 17px}
+.ov-fact h3{font-size:15.5px;margin-bottom:8px;color:var(--ink)}
+.ov-fact p{font-size:14px;color:var(--ink-2);margin:0}
+.ov-fact ul{font-size:14px;color:var(--ink-2);margin:0;padding-left:1.1em}
+.ov-quote{
+  border-left:4px solid var(--brand);background:linear-gradient(90deg,#fdf3ee,#fff);
+  padding:14px 18px;border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink-2);
+}
+
+/* 精选卡片网格 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pick{
+  border:1px solid var(--line);border-radius:var(--radius-s);overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;
+}
+.pick:hover{transform:translateY(-3px);box-shadow:var(--shadow-l)}
+.pick img{width:100%;height:118px;object-fit:cover}
+.pick .pd{padding:12px 13px 14px}
+.pick h3{font-size:15px;margin-bottom:6px}
+.pick p{font-size:13px;color:var(--ink-3);margin:0 0 9px}
+.pick .meta{font-size:12px;color:var(--brand-deep);font-weight:600;display:flex;justify-content:space-between;gap:6px}
+
+/* 紧凑列表：最新更新 */
+.updates{list-style:none;padding:0;margin:0}
+.updates li{
+  display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:baseline;
+  padding:10px 0;border-bottom:1px dashed var(--line);margin:0;
+}
+.updates li:last-child{border-bottom:0}
+.updates time{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.updates .ut{font-size:14.5px}
+.updates .ut b{font-weight:600}
+.updates .uc{font-size:12px;color:var(--brand-deep);background:var(--brand-soft);border-radius:5px;padding:1px 7px;white-space:nowrap}
+
+/* 分类标签索引 */
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 6px;padding:0;list-style:none}
+.tags li{margin:0}
+.tag-a{
+  display:inline-block;border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:6px 14px;font-size:13.5px;color:var(--ink-2);
+}
+.tag-a:hover{border-color:var(--brand);color:var(--brand-deep);background:var(--brand-soft);text-decoration:none}
+.tag-a .n{color:var(--ink-3);font-size:12px;margin-left:4px}
+
+/* 深度解析：分栏正文 */
+.deep .keyline{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 20px;padding:0;list-style:none;
+}
+.deep .keyline li{
+  background:#fdfaf6;border:1px solid var(--line);border-radius:var(--radius-s);
+  padding:11px 13px;font-size:13.5px;color:var(--ink-2);margin:0;
+}
+.deep .keyline b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
+.deep h3{font-size:17.5px;margin:22px 0 9px;padding-left:12px;border-left:4px solid var(--brand)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:15.5px;color:var(--ink-2)}
+.deep .callout{
+  background:#f6fbf9;border:1px solid #cfe6de;border-left:4px solid var(--teal);
+  border-radius:var(--radius-s);padding:14px 17px;margin:16px 0;font-size:14.5px;color:#28473f;
+}
+.deep .callout b{color:#1f3d35}
+
+/* 体验指南：编号步骤 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{
+  counter-increment:s;position:relative;padding:0 0 16px 44px;margin:0;
+  border-left:2px solid #efe3d8;margin-left:14px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{
+  content:counter(s);position:absolute;left:-15px;top:0;width:28px;height:28px;
+  background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:13.5px;font-weight:700;
+}
+.steps h3{font-size:15.5px;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--ink-2);margin:0}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cp{border:1px solid var(--line);border-radius:var(--radius-s);padding:15px 16px;background:#fff}
+.cp.free{border-color:#cfe6de;background:#f7fcfa}
+.cp.paid{border-color:#f0dcc0;background:#fefaf3}
+.cp h3{font-size:15px;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.cp h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.cp.paid h3 .dot{background:var(--gold)}
+.cp ul{font-size:13.8px;color:var(--ink-2);margin:0;padding-left:1.1em}
+.cp .foot{font-size:12.5px;color:var(--ink-3);margin-top:9px;border-top:1px dashed var(--line);padding-top:8px}
+
+/* FAQ 折叠 */
+.faq details{
+  border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:10px;
+  padding:0 16px;
+}
+.faq details[open]{border-color:#f0cbbb;background:#fffdfc}
+.faq summary{
+  cursor:pointer;font-size:15px;font-weight:600;padding:12px 26px 12px 0;position:relative;
+  list-style:none;color:var(--ink);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:2px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--brand);font-weight:400;
+}
+.faq details[open] summary::after{content:"−"}
+.faq .ans{font-size:14.3px;color:var(--ink-2);padding:0 0 13px;border-top:1px dashed var(--line);padding-top:11px}
+
+/* 评论 */
+.comments{display:grid;gap:12px}
+.cmt{border:1px solid var(--line);border-radius:var(--radius-s);padding:13px 15px;background:#fff}
+.cmt-h{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
+.avatar{
+  width:28px;height:28px;border-radius:50%;background:var(--brand-soft);color:var(--brand-deep);
+  display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;
+  flex:0 0 auto;
+}
+.cmt-h .who{font-size:13.5px;font-weight:700}
+.cmt-h .when{font-size:12px;color:var(--ink-3)}
+.cmt-h .lv{font-size:11.5px;color:var(--gold);border:1px solid #efdfbf;background:#fffbf2;border-radius:5px;padding:0 6px}
+.cmt p{font-size:14.2px;margin:0;color:var(--ink-2)}
+.cmt .target{color:var(--brand-deep);font-weight:600}
+
+/* 资讯列表 */
+.news{list-style:none;padding:0;margin:0}
+.news li{
+  display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:flex-start;
+}
+.news li:last-child{border-bottom:0}
+.news .nd{flex:0 0 54px;text-align:center;background:#fdfaf6;border:1px solid var(--line);border-radius:8px;padding:4px 0}
+.news .nd b{display:block;font-size:16px;color:var(--brand-deep);line-height:1.2}
+.news .nd span{font-size:11px;color:var(--ink-3)}
+.news h3{font-size:14.8px;margin-bottom:3px}
+.news p{font-size:13.3px;color:var(--ink-3);margin:0}
+.news .src{font-size:12px;color:var(--teal)}
+
+/* 相关推荐 */
+.recs{display:flex;flex-wrap:wrap;gap:9px;padding:0;margin:0;list-style:none}
+.recs li{margin:0}
+.rec-a{
+  display:inline-flex;align-items:center;gap:7px;border:1px dashed #e0cbb8;border-radius:9px;
+  padding:7px 13px;font-size:13.5px;background:#fffdfa;color:var(--ink-2);
+}
+.rec-a:hover{border-style:solid;border-color:var(--brand);color:var(--brand-deep);text-decoration:none}
+.rec-a .k{font-size:11px;color:var(--brand);font-weight:700}
+
+/* 榜单 / 时间线 */
+.rank{list-style:none;counter-reset:r;padding:0;margin:0}
+.rank li{
+  counter-increment:r;display:grid;grid-template-columns:30px 1fr auto;gap:11px;
+  align-items:center;padding:10px 0;border-bottom:1px dashed var(--line);margin:0;
+}
+.rank li:last-child{border-bottom:0}
+.rank li::before{
+  content:counter(r);width:26px;height:26px;border-radius:8px;background:#f3ece2;color:var(--ink-2);
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;
+}
+.rank li:nth-child(1)::before{background:var(--brand);color:#fff}
+.rank li:nth-child(2)::before{background:#e2a05a;color:#fff}
+.rank li:nth-child(3)::before{background:#e6c98e;color:#5b4310}
+.rank .rk-t{font-size:14.5px}
+.rank .rk-t small{display:block;font-size:12.5px;color:var(--ink-3);font-weight:400}
+.rank .rk-s{font-size:13px;color:var(--brand-deep);font-weight:700;font-variant-numeric:tabular-nums}
+
+.timeline{list-style:none;padding:0 0 0 6px;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:#efe3d8}
+.timeline li{position:relative;padding:0 0 14px 26px;margin:0}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{
+  content:"";position:absolute;left:3px;top:7px;width:11px;height:11px;border-radius:50%;
+  background:#fff;border:2.5px solid var(--brand);
+}
+.timeline time{font-size:12.5px;color:var(--brand-deep);font-weight:700;display:block}
+.timeline .tl-t{font-size:14.3px}
+.timeline .tl-t small{color:var(--ink-3);font-size:12.5px;display:block}
+
+/* 侧栏 */
+.side-card{padding:18px 18px 16px;margin-bottom:var(--gap)}
+.side-card h2{font-size:15.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.side-card h2::before{content:"";width:4px;height:15px;background:var(--brand);border-radius:2px;display:block}
+.snav{list-style:none;padding:0;margin:0}
+.snav li{margin:0}
+.snav a{
+  display:block;font-size:13.8px;color:var(--ink-2);padding:7px 10px;border-radius:7px;
+  border-left:3px solid transparent;
+}
+.snav a:hover{background:#fdfaf6;text-decoration:none}
+.snav a.active{background:var(--brand-soft);color:var(--brand-deep);border-left-color:var(--brand);font-weight:600}
+.side-note{font-size:12.8px;color:var(--ink-3);line-height:1.65}
+.mini-list{list-style:none;padding:0;margin:0}
+.mini-list li{font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line);margin:0;display:flex;justify-content:space-between;gap:8px}
+.mini-list li:last-child{border-bottom:0}
+.mini-list .v{color:var(--brand-deep);font-weight:700;font-variant-numeric:tabular-nums}
+.side-cta{background:linear-gradient(150deg,#e8543f,#c23c27);color:#fff;border:0}
+.side-cta h2{color:#fff}
+.side-cta h2::before{background:#ffd9a8}
+.side-cta p{font-size:13.5px;color:#ffe7dd;margin-bottom:12px}
+.side-cta .btn{background:#fff;color:var(--brand-deep);width:100%;justify-content:center}
+.side-cta .btn:hover{background:#ffeede}
+
+/* 页尾 */
+.foot{background:var(--ink);color:#cfc7bc;margin-top:10px;padding:40px 0 26px;font-size:13.8px}
+.foot .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px;margin-bottom:28px}
+.foot h3{color:#fff;font-size:14.5px;margin-bottom:10px}
+.foot a{color:#cfc7bc}
+.foot a:hover{color:#ffd9a8}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:6px}
+.foot .fbrand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px;margin-bottom:9px}
+.foot .fbrand .mark{width:28px;height:28px}
+.foot .slogan{font-size:13.5px;color:#a9a094;margin-bottom:10px}
+.foot .sample{font-size:12.5px;color:#8f867b;line-height:1.7}
+.foot .bottom{border-top:1px solid #3a352f;padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#8f867b}
+
+/* 回到顶部 */
+.totop{
+  position:fixed;right:20px;bottom:24px;z-index:50;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-l);color:var(--brand-deep);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;
+  transition:opacity .2s,visibility .2s,transform .15s;
+}
+.totop.show{opacity:1;visibility:visible}
+.totop:hover{transform:translateY(-2px)}
+.totop svg{width:18px;height:18px}
+
+/* 响应式 */
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .side-sticky{position:static}
+  .side{order:2}
+  .hero .wrap{grid-template-columns:1fr;gap:24px;padding-top:34px}
+  .hero-visual{max-width:460px}
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .foot .cols{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .nav.open{
+    display:flex;position:absolute;left:12px;right:12px;top:calc(var(--head-h) + 4px);
+    background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-l);
+    padding:10px;flex-direction:column;gap:2px;
+  }
+  .head{position:sticky}
+  .head .wrap{position:relative}
+  .menu-btn{display:flex}
+  .searchbox input{width:140px}
+  .searchbox input:focus{width:160px}
+}
+@media (max-width:720px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px}
+  .sec{padding:20px 16px}
+  .hero .wrap{padding-top:26px;padding-bottom:34px}
+  .hero-stats{gap:18px}
+  .grid3{grid-template-columns:1fr}
+  .overview{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .deep .keyline{grid-template-columns:1fr}
+  .updates li{grid-template-columns:1fr;gap:2px}
+  .updates time{font-size:12px}
+  .head-tools .searchbox{display:none}
+  .foot .cols{grid-template-columns:1fr 1fr;gap:20px}
+  .hero-note{position:static;margin-top:10px;max-width:none}
+  .annbar{font-size:12.5px}
+  .annbar .txt{font-size:12.5px}
+  .totop{right:12px;bottom:14px;width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+  .pick:hover,.btn:hover,.totop:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="annbar" id="ann">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <span class="txt">11月6日新增 <b>3 个免费圈子</b>：手作、城市骑行、独立播客；「免费圈福利地图」同步补到 42 个条目</span>
+    <a href="/#updates">看更新明细</a>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="/#top" aria-label="铁粉空间微密圈免费 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="15" fill="#e8543f"/>
+        <circle cx="32" cy="30" r="13" fill="none" stroke="#fff" stroke-width="3"/>
+        <circle cx="32" cy="30" r="4" fill="#fff"/>
+        <path d="M19 53c3.4-7.4 8.2-10.6 13-10.6S41.6 45.6 45 53" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="49" cy="16" r="4" fill="#ffd9a8"/>
+      </svg>
+      <span class="bname">铁粉空间微密圈免费</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="主题导航">
+      <a href="/#overview">圈子概览</a>
+      <a href="/#picks">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">加入指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">粉丝评论</a>
+    </nav>
+    <div class="head-tools">
+      <form class="searchbox" id="searchForm" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="搜圈子、玩法、规则" aria-label="站内搜索">
+        <div class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></div>
+      </form>
+      <a class="btn btn-primary" href="/#guide">免费加入指引</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="展开导航菜单"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <div>
+        <span class="hero-kicker"><i></i>本周主推 · 免费圈子地图 42 条</span>
+        <h1 id="heroTitle">铁粉空间微密圈<em>免费</em>入口与玩法指南</h1>
+        <p class="hero-lead">把散落在各个创作者主页下的免费圈子整理成一张可查的地图：哪些圈子真免费、免费能看什么、进圈要回答什么问题、哪些内容只对老粉开放。11月的核对覆盖 42 个圈子，逐一记录了加入门槛与最新公告时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#channels">按兴趣找圈子</a>
+          <a class="btn btn-ghost" href="/#compare">免费与付费差异对照</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>42</strong>已核对免费圈子</div>
+          <div><strong>9</strong>内容大类</div>
+          <div><strong>11月6日</strong>最近一次更新</div>
+          <div><strong>3 条</strong>本周新上榜</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 460 380" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffd9c6"/>
+              <stop offset="1" stop-color="#f6b49c"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffffff"/>
+              <stop offset="1" stop-color="#fff3ea"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="16" width="424" height="348" rx="26" fill="url(#g1)"/>
+          <circle cx="368" cy="70" r="46" fill="#fff" opacity=".45"/>
+          <circle cx="86" cy="300" r="34" fill="#fff" opacity=".35"/>
+          <rect x="52" y="66" width="220" height="132" rx="16" fill="url(#g2)" stroke="#f0d6c6"/>
+          <circle cx="92" cy="106" r="16" fill="#e8543f" opacity=".85"/>
+          <rect x="120" y="96" width="118" height="10" rx="5" fill="#e2d3c6"/>
+          <rect x="120" y="114" width="80" height="8" rx="4" fill="#ecdfd3"/>
+          <rect x="72" y="140" width="180" height="8" rx="4" fill="#f0e2d6"/>
+          <rect x="72" y="158" width="140" height="8" rx="4" fill="#f0e2d6"/>
+          <rect x="240" y="150" width="176" height="176" rx="18" fill="url(#g2)" stroke="#f0d6c6"/>
+          <circle cx="328" cy="196" r="26" fill="none" stroke="#e8543f" stroke-width="4"/>
+          <circle cx="328" cy="196" r="7" fill="#e8543f"/>
+          <path d="M300 262c5-16 16-24 28-24s23 8 28 24" fill="none" stroke="#e8543f" stroke-width="4" stroke-linecap="round"/>
+          <rect x="270" y="286" width="116" height="8" rx="4" fill="#eaddd1"/>
+          <rect x="270" y="302" width="86" height="8" rx="4" fill="#f0e2d6"/>
+          <path d="M96 226l14 24 26-40" fill="none" stroke="#2f6e63" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="60" y="262" width="150" height="10" rx="5" fill="#fff" opacity=".8"/>
+          <rect x="60" y="282" width="110" height="10" rx="5" fill="#fff" opacity=".6"/>
+          <g stroke="#b8341f" stroke-width="3" stroke-dasharray="6 7" opacity=".6">
+            <path d="M200 210c20 12 32 14 46 14"/>
+          </g>
+        </svg>
+        <div class="hero-note"><b>免费圈也分层</b>同一创作者的公开圈、粉丝圈、老粉圈，能看的内容并不一样。</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="maincol">
+
+      <!-- 领域概览 -->
+      <section class="card sec" id="overview" aria-labelledby="ovTitle">
+        <div class="sec-head">
+          <span class="sec-tag">领域概览</span>
+          <h2 id="ovTitle">免费粉丝圈子在卖什么、送什么</h2>
+          <span class="sub">11月5日核对</span>
+        </div>
+        <p class="lead-p">创作者把粉丝往私域拉，通常先开一个零门槛的公开圈，再用它筛选愿意互动的老粉。免费圈不是没内容，而是内容类型有规律：日常碎片、投票、抽奖、直播预告占比高，真正的长文与教程往往放在下一层。</p>
+        <div class="overview">
+          <div class="ov-fact">
+            <h3>免费圈里最常见的四类内容</h3>
+            <ul>
+              <li><b>日常碎片</b>：拍摄花絮、通勤路上、试吃记录，单条 1—3 张图加两句话。</li>
+              <li><b>互动投票</b>：下周拍什么、封面选哪张，投票人数常在 200—2000 之间。</li>
+              <li><b>直播与上新预告</b>：提前 1—2 天发时间，部分带专属口令。</li>
+              <li><b>粉丝点名</b>：管理员每周整理活跃名单，置顶展示。</li>
+            </ul>
+          </div>
+          <div>
+            <div class="ov-quote">「进圈先看公告，公告里写了三件事：不许搬运、不许私加、每周三晚上八点有语音。」——手作圈「一针一线」公告栏，11月3日。</div>
+            <div class="ov-fact" style="margin-top:14px">
+              <h3>一个常被忽略的点</h3>
+              <p>免费不等于随时可进。约两成圈子在满员后改为「申请制」，需要回答两道问题，管理员 24 小时内手动放行。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="card sec" id="picks" aria-labelledby="pkTitle">
+        <div class="sec-head">
+          <span class="sec-tag">精选推荐</span>
+          <h2 id="pkTitle">本周值得先关注的 6 个免费圈</h2>
+          <span class="sub">按更新频率与互动量排序</span>
+        </div>
+        <p class="lead-p">筛选标准写在此处：过去 30 天有更新、公告明确写出免费、圈内互动可公开看到次数。三个条件缺一不入选。</p>
+        <div class="grid3">
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-knit/420/260" width="420" height="260" loading="lazy" alt="手作圈一针一线的毛线编织作品图">
+            <div class="pd">
+              <h3>一针一线：手作免费圈</h3>
+              <p>每周三语音答疑，图纸放共享相册，新手可以领入门针法表。</p>
+              <div class="meta"><span>更新 11月6日</span><span>互动 860</span></div>
+            </div>
+          </article>
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-ride/420/260" width="420" height="260" loading="lazy" alt="城市骑行圈集合点的自行车与头盔">
+            <div class="pd">
+              <h3>城市骑行 · 周末拉练圈</h3>
+              <p>周六早晨七点集合，路线提前两天发，免费圈能看到完整路书。</p>
+              <div class="meta"><span>更新 11月4日</span><span>互动 1240</span></div>
+            </div>
+          </article>
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-podcast/420/260" width="420" height="260" loading="lazy" alt="独立播客圈的录音室麦克风">
+            <div class="pd">
+              <h3>独立播客听众圈</h3>
+              <p>节目更新后 24 小时内发补充书单，圈内可提交提问供下期选用。</p>
+              <div class="meta"><span>更新 11月5日</span><span>互动 530</span></div>
+            </div>
+          </article>
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-cook/420/260" width="420" height="260" loading="lazy" alt="家常菜圈的厨房灶台与备好的食材">
+            <div class="pd">
+              <h3>一人食快手菜圈</h3>
+              <p>每天一道 20 分钟内能做完的菜，配方按克数写，附失败案例。</p>
+              <div class="meta"><span>更新 11月6日</span><span>互动 970</span></div>
+            </div>
+          </article>
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-photo/420/260" width="420" height="260" loading="lazy" alt="街头摄影圈的相机与街角光影">
+            <div class="pd">
+              <h3>街头摄影 · 扫街圈</h3>
+              <p>每月一次命题拍摄，免费圈可看全部投稿，点评由两位老粉认领。</p>
+              <div class="meta"><span>更新 11月2日</span><span>互动 700</span></div>
+            </div>
+          </article>
+          <article class="pick">
+            <img src="https://picsum.photos/seed/circle-study/420/260" width="420" height="260" loading="lazy" alt="备考自习圈的桌面笔记本与计时器">
+            <div class="pd">
+              <h3>自习搭子 · 考研打卡圈</h3>
+              <p>早八晚十打卡，排行榜每周结算，免费圈只显示前五十名。</p>
+              <div class="meta"><span>更新 11月5日</span><span>互动 1580</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="card sec" id="updates" aria-labelledby="upTitle">
+        <div class="sec-head">
+          <span class="sec-tag">最新更新</span>
+          <h2 id="upTitle">近三天圈子变动记录</h2>
+          <span class="sub">按时间倒序</span>
+        </div>
+        <ul class="updates">
+          <li>
+            <time datetime="2026-11-08">今天 09:20</time>
+            <span class="ut"><b>自习搭子圈</b>把每日打卡截止时间从 22:30 调到 23:00，公告说明了理由：期末周。</span>
+            <span class="uc">规则调整</span>
+          </li>
+          <li>
+            <time datetime="2026-11-07">昨天 18:45</time>
+            <span class="ut"><b>街头摄影圈</b>上传 11 月命题「雨后的公交站」投稿共 37 张，仍未开放点赞。</span>
+            <span class="uc">内容更新</span>
+          </li>
+          <li>
+            <time datetime="2026-11-06">11月6日 21:10</time>
+            <span class="ut"><b>手作、骑行、播客</b>三个圈子进入免费地图，公告同步挂出加入问题。</span>
+            <span class="uc">新增入口</span>
+          </li>
+          <li>
+            <time datetime="2026-11-05">11月5日 12:00</time>
+            <span class="ut"><b>一人食快手菜圈</b>把菜谱相册从「仅圈内可见」改为「公开可见」，非成员也能浏览。</span>
+            <span class="uc">权限变更</span>
+          </li>
+          <li>
+            <time datetime="2026-11-04">11月4日 07:30</time>
+            <span class="ut"><b>城市骑行圈</b>发布本周六路线：滨江绿道 32 公里，集合点改到二号门便利店门口。</span>
+            <span class="uc">活动预告</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="card sec" id="channels" aria-labelledby="chTitle">
+        <div class="sec-head">
+          <span class="sec-tag">分类入口</span>
+          <h2 id="chTitle">按兴趣找免费圈：9 个内容频道</h2>
+          <span class="sub">括号内为已核对圈子数</span>
+        </div>
+        <p class="lead-p">分类不按平台命名，按粉丝实际搜的内容词来分。点进去看到的是同一频道下的免费圈子清单与各自的加入条件。</p>
+        <ul class="tags">
+          <li><a class="tag-a" href="/#picks">手作与编织<span class="n">6</span></a></li>
+          <li><a class="tag-a" href="/#picks">城市骑行<span class="n">4</span></a></li>
+          <li><a class="tag-a" href="/#picks">独立播客<span class="n">5</span></a></li>
+          <li><a class="tag-a" href="/#picks">一人食菜谱<span class="n">7</span></a></li>
+          <li><a class="tag-a" href="/#picks">街头摄影<span class="n">5</span></a></li>
+          <li><a class="tag-a" href="/#picks">考研与自习<span class="n">4</span></a></li>
+          <li><a class="tag-a" href="/#compare">健身打卡<span class="n">3</span></a></li>
+          <li><a class="tag-a" href="/#compare">宠物日常<span class="n">3</span></a></li>
+          <li><a class="tag-a" href="/#rank">穿搭与二手中古<span class="n">5</span></a></li>
+        </ul>
+        <p class="lead-p" style="margin-top:14px;font-size:13.5px;color:var(--ink-3)">合计 42 个，与首屏数字一致。频道里若有圈子 30 天未更新，会被移入「沉睡圈」列表，不占频道计数。</p>
+      </section>
+
+      <!-- 深度解析（唯一主体阅读区） -->
+      <section class="card sec deep" id="deep" aria-labelledby="dpTitle">
+        <div class="sec-head">
+          <span class="sec-tag">深度解析</span>
+          <h2 id="dpTitle">免费圈的真实成本：时间、注意力与筛选</h2>
+        </div>
+        <ul class="keyline">
+          <li><b>核对方式</b>逐个翻公告与置顶，记录最近一次内容发布日期</li>
+          <li><b>样本</b>42 个免费圈 + 11 个付费圈对照</li>
+          <li><b>截止</b>2026年11月6日 22:00</li>
+        </ul>
+        <p>先说结论：免费圈的核心功能是筛选，不是赠予。创作者用零门槛把人聚起来，再用互动频率、打卡连续天数、提问质量挑出愿意投入的人。判断一个免费圈值不值得留，看三件事——公告多久没改、置顶内容是不是半年前的、管理员回不回问题。三件都过关，才轮得到内容好不好看。</p>
+
+        <h3>案例一：一针一线手作圈，公告改了 4 次的三个月</h3>
+        <p>8月12日建圈时，公告只写「欢迎交流」；9月3日加了「禁止发外链」；10月17日加了「每周三语音答疑，缺席不补」；11月3日又补了一条「图纸放共享相册，不要私信索取」。四次修改，每次都在堵一个具体的漏洞。同期圈内日更从 3 条降到 1.2 条，但提问的回复率从四成升到七成。数量降、质量升，这是免费圈少见的一条正向曲线。</p>
+        <p>可以反驳的地方在于：这种曲线不是圈子机制带来的，而是建圈者本人从兼职转为全职，在线时间翻倍。换成白天上班的创作者，同样规则未必有同样效果。判断时应把「人」和「规则」分开看。</p>
+
+        <h3>案例二：骑行圈与摄影圈的两种免费策略</h3>
+        <p>城市骑行圈把关键信息全部免费公开：路书、集合点、补给站、退出机制，甚至写明「跟不上可中途退出，无需解释」。摄影圈相反，投稿免费看，点评与修图示范放在付费层。两个圈子 30 天互动量接近，骑行 1240，摄影 700，但骑行圈的新成员 7 日留存约 58%，摄影圈约 33%。免费给到什么程度，直接影响留存，而非直接影响付费转化。</p>
+        <div class="callout"><b>可核对的判断：</b>免费圈公开的信息越接近「能独立行动」的程度，留存越高；只公开结果、不公开过程的圈子，留存普遍低于四成。用骑行 58% 与摄影 33% 对照即可检验；若换五个圈子仍不成立，这条判断就该被推翻。</div>
+
+        <h3>案例三：同一事件在三个圈的不同说法</h3>
+        <p>10月28日某平台调整了圈子消息的推送频率。手作圈管理员转述为「以后重要通知请自己来看置顶」；自习圈直接贴出规则截图，标注调整生效时间为 10月29日 0 点；播客圈没有说明，只在 10月30日发了一句「最近推送变少，别慌」。三种处理方式对应三种角色：转述、证据、安抚。对粉丝来说，只有第二种给出可验证的信息。看到只有转述或安抚的圈子，应默认其管理依赖个人情绪，而非流程。</p>
+
+        <h3>案例四：老粉圈与免费圈的边界在移动</h3>
+        <p>一人食快手菜圈 11月5日把菜谱相册改为公开，等于把原本的圈内福利外移。管理员的说法是「配方本来就是网上能查到的，藏着没意义」。此后两天，圈内新增提问 46 条，比前一周日均 12 条翻了近四倍，但管理员回复只有 9 条。开放带来流量，也带来回复压力。这类调整通常在两到三周内出现二次改动，要么恢复限制，要么增补管理员。</p>
+        <p>据此可以提出一个具体推测：当一个免费圈把内容公开、而管理人手不变时，提问量会在 48 小时内达到日均的三到四倍，回复率跌到两成以下。这一推测以 11月5日至7日的数据为依据，尚未经过第二个圈子验证。</p>
+      </section>
+
+      <!-- 对照面板 -->
+      <section class="card sec" id="compare" aria-labelledby="cpTitle">
+        <div class="sec-head">
+          <span class="sec-tag">体验指南</span>
+          <h2 id="cpTitle">免费圈与付费圈：能看到的与看不到的</h2>
+        </div>
+        <div class="compare">
+          <div class="cp free">
+            <h3><span class="dot"></span>免费圈常见配置</h3>
+            <ul>
+              <li>日常碎片、花絮、投票：基本全开</li>
+              <li>直播与上新预告：提前 1—2 天</li>
+              <li>长文教程、图纸、配方：部分公开</li>
+              <li>一对一答疑：一般不提供</li>
+              <li>历史内容回看：常限制在 30 天内</li>
+            </ul>
+            <div class="foot">典型例子：骑行路书全公开，摄影点评不放</div>
+          </div>
+          <div class="cp paid">
+            <h3><span class="dot"></span>付费圈常见配置</h3>
+            <ul>
+              <li>系统教程、分步图纸：按章节发</li>
+              <li>作业点评：每周固定名额</li>
+              <li>直播回放：长期可看</li>
+              <li>专属答疑：48 小时内回复</li>
+              <li>线下活动优先报名</li>
+            </ul>
+            <div class="foot">典型例子：手作进阶班按月收费，含点评</div>
+          </div>
+        </div>
+        <p style="margin-top:14px;font-size:13.6px;color:var(--ink-3)">对照不是劝退。免费圈适合先观察表达风格与更新节奏，再决定是否深入。多数人的实际路径是：免费圈待两周，确认创作者还在更新，再考虑下一步。</p>
+      </section>
+
+      <!-- 加入步骤 -->
+      <section class="card sec" id="guide" aria-labelledby="gdTitle">
+        <div class="sec-head">
+          <span class="sec-tag">加入步骤</span>
+          <h2 id="gdTitle">第一次进免费圈的 5 个动作</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>先看公告的修改时间</h3>
+            <p>公告三个月没改，通常意味着管理停滞。优先选 30 天内改过公告的圈子，改动内容往往能看出当前最在意什么。</p>
+          </li>
+          <li>
+            <h3>回答加入问题时写具体内容</h3>
+            <p>常见问题如「你从哪条内容认识我」「想看哪类内容」。写具体条目名比写「很喜欢」通过率高，管理员据此分流。</p>
+          </li>
+          <li>
+            <h3>翻三天内的帖子再发言</h3>
+            <p>免费圈的置顶往往过时，近三天的帖子才反映真实活跃度。回复数低于 5 条的帖子占多数，说明活跃集中在少数人。</p>
+          </li>
+          <li>
+            <h3>确认内容回看期限</h3>
+            <p>部分圈子只保留 30 天内容。想补旧内容的，先在圈内搜索关键词，看能搜出几条，再决定要不要长期待。</p>
+          </li>
+          <li>
+            <h3>记下退出方式</h3>
+            <p>正规圈子在公告里写清退出与删除资料的路径。找不到退出说明的，谨慎填写个人信息。</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="card sec faq" id="faq" aria-labelledby="fqTitle">
+        <div class="sec-head">
+          <span class="sec-tag">常见问答</span>
+          <h2 id="fqTitle">关于免费圈，问得最多的 7 个问题</h2>
+        </div>
+        <details open>
+          <summary>免费圈子需要付费才能看全部内容吗？</summary>
+          <div class="ans">不需要，但免费圈通常只开放一部分。日常碎片、投票、预告基本可见，系统教程与一对一答疑多放在下一层。判断方法：翻置顶目录，看标题数量与可点开的数量差多少，差值就是被收起来的部分。</div>
+        </details>
+        <details>
+          <summary>加入申请一直不通过是什么原因？</summary>
+          <div class="ans">最常见的是回答过于笼统，例如「想学习」。管理员每天处理几十份申请，通常优先放行写了具体条目名的。其次看申请时间，部分圈子只在固定时段集中处理，比如每周一、周四晚。</div>
+        </details>
+        <details>
+          <summary>免费圈里的抽奖是真的吗？</summary>
+          <div class="ans">有真实抽奖，也有引流性质的。可核对的信号：公告写明开奖时间与名单公示位置，往期能找到中奖记录。只写「关注即可参与」、没有开奖日期的，参与价值有限。</div>
+        </details>
+        <details>
+          <summary>为什么有的圈子人数满了就不再放人？</summary>
+          <div class="ans">管理成本有上限。一个管理员能稳定回复的活跃成员通常在数百人量级，超过后提问会被淹没。满员改为申请制，本质是用门槛换回复质量。</div>
+        </details>
+        <details>
+          <summary>圈内内容可以转发到别的平台吗？</summary>
+          <div class="ans">多数公告明确禁止搬运，尤其是图纸、配方、路书这类原创内容。转发前看公告里的「禁止」条目，没有写允许的，默认不允许。</div>
+        </details>
+        <details>
+          <summary>免费圈和粉丝群有什么区别？</summary>
+          <div class="ans">圈子偏内容沉淀，帖子可检索、可回看；群偏即时聊天，信息滚动快、难查找。想补系统内容的看圈子，想找人即时聊天的进群，两者常同时存在。</div>
+        </details>
+        <details>
+          <summary>长期不发言会被移出吗？</summary>
+          <div class="ans">部分圈子会清理连续 60 天无互动的成员，尤其在满员后。规则通常写在公告末尾，清理前一般会有一次点名提醒。</div>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="card sec" id="comments" aria-labelledby="cmTitle">
+        <div class="sec-head">
+          <span class="sec-tag">粉丝评论</span>
+          <h2 id="cmTitle">来自圈内成员的 8 条真实反馈</h2>
+          <span class="sub">含中性评价</span>
+        </div>
+        <div class="comments">
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">陈</span><span class="who">陈屿</span><span class="lv">老粉</span><span class="when">11月6日</span></div>
+            <p><span class="target">一针一线</span>的图纸相册做得好，按针法分了文件夹，新手能顺着找。就是公告里说的每周三语音，我错过两次，确实不补。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">林</span><span class="who">林小满</span><span class="lv">新成员</span><span class="when">11月6日</span></div>
+            <p><span class="target">城市骑行圈</span>的路书写了补给点和退出点，跟了一次 32 公里，中途退出没人追问，这点挺舒服。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">周</span><span class="who">周末不加班</span><span class="lv">成员</span><span class="when">11月5日</span></div>
+            <p><span class="target">一人食快手菜圈</span>改成公开以后，提问一下多了好多，管理员明显回不过来。前两天问的腌制比例还没人答。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">许</span><span class="who">许工</span><span class="lv">潜水</span><span class="when">11月5日</span></div>
+            <p>加了四个免费圈，三个的置顶还是七八月的。不是内容差，是没人管。<span class="target">独立播客圈</span>算例外，书单更新很勤。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">吴</span><span class="who">吴一诺</span><span class="lv">老粉</span><span class="when">11月4日</span></div>
+            <p><span class="target">街头摄影圈</span>的命题拍摄有意思，37 张投稿能看完。就是点评名额太少，报名靠手速。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">何</span><span class="who">何同学</span><span class="lv">成员</span><span class="when">11月4日</span></div>
+            <p><span class="target">自习搭子圈</span>改到 23 点截止之后，打卡人数涨了一截。排行榜只显示前五十，后面的看不到自己的位次，有点劝退。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">邓</span><span class="who">邓芽</span><span class="lv">新成员</span><span class="when">11月3日</span></div>
+            <p>申请时写「想学编织」被拒了一次，后来写明想学棒针起针，当天就通过了。问题确实是有针对性的。</p>
+          </div>
+          <div class="cmt">
+            <div class="cmt-h"><span class="avatar">罗</span><span class="who">罗卜</span><span class="lv">成员</span><span class="when">11月2日</span></div>
+            <p>免费圈看多了会疲劳，信息都差不多。<span class="target">宠物日常</span>那类圈子互动倒是热闹，但一天几十条晒猫，翻起来累。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="card sec" id="news" aria-labelledby="nwTitle">
+        <div class="sec-head">
+          <span class="sec-tag">相关资讯</span>
+          <h2 id="nwTitle">圈子与平台规则的四条动态</h2>
+        </div>
+        <ul class="news">
+          <li>
+            <div class="nd"><b>11.07</b><span>平台</span></div>
+            <div>
+              <h3>圈子消息推送频率调整的后续说明</h3>
+              <p>平台在帮助中心补充了通知开关的位置说明，10月29日生效。管理员可在公告里引导成员自行打开。</p>
+              <span class="src">来源：平台帮助中心更新记录</span>
+            </div>
+          </li>
+          <li>
+            <div class="nd"><b>11.05</b><span>创作</span></div>
+            <div>
+              <h3>三个手作创作者联合发布免费图纸合集</h3>
+              <p>合计 26 张基础图纸，放在各自圈子的共享相册，注明可自用、不可转售。</p>
+              <span class="src">来源：一针一线圈公告</span>
+            </div>
+          </li>
+          <li>
+            <div class="nd"><b>11.03</b><span>活动</span></div>
+            <div>
+              <h3>城市骑行圈与两家车店合作提供免费检查</h3>
+              <p>11月每个周六上午，凭圈内打卡记录可做一次刹车与胎压检查，不含配件更换。</p>
+              <span class="src">来源：骑行圈置顶帖</span>
+            </div>
+          </li>
+          <li>
+            <div class="nd"><b>11.01</b><span>治理</span></div>
+            <div>
+              <h3>部分圈子开始清理 60 天无互动成员</h3>
+              <p>自习与摄影两个圈子在公告中预告清理时间，给出申诉入口，清理后重新开放申请。</p>
+              <span class="src">来源：两个圈子的管理员公告</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 榜单 -->
+      <section class="card sec" id="rank" aria-labelledby="rkTitle">
+        <div class="sec-head">
+          <span class="sec-tag">榜单</span>
+          <h2 id="rkTitle">免费圈活跃度前 5：按近 30 天互动量</h2>
+        </div>
+        <p class="lead-p">互动量包含发帖、回复、投票与打卡，同一账号每日计一次。榜单只统计免费圈，付费圈不参与。</p>
+        <ol class="rank">
+          <li><span class="rk-t">自习搭子 · 考研打卡圈<small>日打卡稳定在 300 人以上，排行榜每周结算</small></span><span class="rk-s">1580</span></li>
+          <li><span class="rk-t">城市骑行 · 周末拉练圈<small>每周一次线下拉练带动回帖，路书开放</small></span><span class="rk-s">1240</span></li>
+          <li><span class="rk-t">一人食快手菜圈<small>菜谱改为公开后提问量翻倍</small></span><span class="rk-s">970</span></li>
+          <li><span class="rk-t">一针一线 · 手作免费圈<small>语音答疑带来集中讨论，回复率高</small></span><span class="rk-s">860</span></li>
+          <li><span class="rk-t">街头摄影 · 扫街圈<small>月度命题投稿 37 张，点评名额紧张</small></span><span class="rk-s">700</span></li>
+        </ol>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="card sec" id="timeline" aria-labelledby="tlTitle">
+        <div class="sec-head">
+          <span class="sec-tag">时间线</span>
+          <h2 id="tlTitle">「免费圈福利地图」的更新过程</h2>
+        </div>
+        <ul class="timeline">
+          <li><time datetime="2026-10-12">10月12日</time><span class="tl-t">第一批 18 个免费圈核对完成<small>记录公告时间、加入方式、可看内容范围</small></span></li>
+          <li><time datetime="2026-10-20">10月20日</time><span class="tl-t">加入分类频道，按内容词拆分<small>从 5 类拆到 9 类，菜谱与摄影单列</small></span></li>
+          <li><time datetime="2026-10-29">10月29日</time><span class="tl-t">平台推送规则调整，补充说明页<small>把管理员的转述与平台说明分开记录</small></span></li>
+          <li><time datetime="2026-11-03">11月3日</time><span class="tl-t">手作圈公告更新，同步修订条目<small>语音答疑缺席不补写进公告</small></span></li>
+          <li><time datetime="2026-11-06">11月6日</time><span class="tl-t">扩至 42 个圈子，新增 3 个入口<small>手作、骑行、播客</small></span></li>
+        </ul>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="card sec" id="recs" aria-labelledby="rcTitle">
+        <div class="sec-head">
+          <span class="sec-tag">相关推荐</span>
+          <h2 id="rcTitle">找圈时常被一起搜的词</h2>
+        </div>
+        <ul class="recs">
+          <li><a class="rec-a" href="/#channels"><span class="k">频道</span>免费粉丝圈入口合集</a></li>
+          <li><a class="rec-a" href="/#compare"><span class="k">对照</span>粉丝圈免费与付费差异</a></li>
+          <li><a class="rec-a" href="/#guide"><span class="k">步骤</span>微密圈免费加入流程</a></li>
+          <li><a class="rec-a" href="/#faq"><span class="k">问答</span>申请一直不通过怎么办</a></li>
+          <li><a class="rec-a" href="/#picks"><span class="k">推荐</span>手作免费圈子推荐</a></li>
+          <li><a class="rec-a" href="/#updates"><span class="k">更新</span>圈子公告变动记录</a></li>
+          <li><a class="rec-a" href="/#comments"><span class="k">评论</span>免费圈真实体验反馈</a></li>
+          <li><a class="rec-a" href="/#rank"><span class="k">榜单</span>活跃免费圈排行</a></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="side">
+      <div class="side-sticky">
+        <div class="card side-card">
+          <h2>栏目导航</h2>
+          <ul class="snav" id="sideNav">
+            <li><a href="/#overview" class="active">领域概览</a></li>
+            <li><a href="/#picks">精选推荐</a></li>
+            <li><a href="/#updates">最新更新</a></li>
+            <li><a href="/#channels">分类入口</a></li>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#compare">免费与付费对照</a></li>
+            <li><a href="/#guide">加入步骤</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#comments">粉丝评论</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#rank">活跃榜单</a></li>
+            <li><a href="/#timeline">地图时间线</a></li>
+            <li><a href="/#recs">相关推荐</a></li>
+          </ul>
+        </div>
+        <div class="card side-card">
+          <h2>本周数据</h2>
+          <ul class="mini-list">
+            <li><span>已核对免费圈</span><span class="v">42</span></li>
+            <li><span>30 天内更新过</span><span class="v">31</span></li>
+            <li><span>满员改申请制</span><span class="v">9</span></li>
+            <li><span>本周新上榜</span><span class="v">3</span></li>
+            <li><span>公告超 90 天未改</span><span class="v">11</span></li>
+          </ul>
+          <p class="side-note" style="margin-top:10px">统计截止 11月6日 22:00，含尚未清理的沉睡圈。</p>
+        </div>
+        <div class="card side-card side-cta">
+          <h2>先看再进</h2>
+          <p>不确定哪个圈子合适，按兴趣频道挑两个，各看三天再决定留下。</p>
+          <a class="btn" href="/#channels">打开频道清单</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="foot" id="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="fbrand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="15" fill="#e8543f"/>
+            <circle cx="32" cy="30" r="13" fill="none" stroke="#fff" stroke-width="3"/>
+            <circle cx="32" cy="30" r="4" fill="#fff"/>
+            <path d="M19 53c3.4-7.4 8.2-10.6 13-10.6S41.6 45.6 45 53" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>铁粉空间微密圈免费</span>
+        </div>
+        <p class="slogan">帮粉丝在加入前看清圈子的更新节奏与开放范围。</p>
+        <p class="sample">页面内容含示例条目：圈子数据、成员评论、活动安排为演示用，非真实成员资料。页面更新时间为 2026年11月8日，对应正文「最新更新」中 11月4日至11月8日的五条记录。</p>
+      </div>
+      <div>
+        <h3>内容频道</h3>
+        <ul>
+          <li><a href="/#channels">手作与编织</a></li>
+          <li><a href="/#channels">城市骑行</a></li>
+          <li><a href="/#channels">独立播客</a></li>
+          <li><a href="/#channels">一人食菜谱</a></li>
+          <li><a href="/#channels">街头摄影</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>使用指引</h3>
+        <ul>
+          <li><a href="/#guide">免费加入流程</a></li>
+          <li><a href="/#compare">免费与付费对照</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#rank">活跃榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>动态与反馈</h3>
+        <ul>
+          <li><a href="/#updates">最新更新记录</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#comments">成员评论</a></li>
+          <li><a href="/#timeline">地图时间线</a></li>
+          <li><a href="/#recs">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 铁粉空间微密圈免费 · 内容为示例整理，加入前请以各圈公告为准</span>
+      <span>站内搜索为本地匹配，不联网检索</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="回到顶部" type="button">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(!nav.contains(e.target) && !menuBtn.contains(e.target)){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var links = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var secs = links.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function setActive(){
+    var offset = 120;
+    var current = secs[0];
+    for(var i=0;i<secs.length;i++){
+      if(secs[i].getBoundingClientRect().top - offset <= 0){
+        current = secs[i];
+      }
+    }
+    links.forEach(function(a){
+      var id = a.getAttribute('href').replace('/#','');
+      if(current && id === current.id){
+        a.classList.add('active');
+      }else{
+        a.classList.remove('active');
+      }
+    });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        setActive();
+        toggleTop();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, {passive:true});
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function toggleTop(){
+    if(!toTop) return;
+    if(window.scrollY > 520){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+  }
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+      var brand = document.querySelector('.brand');
+      if(brand) brand.focus({preventScroll:true});
+    });
+  }
+
+  /* 本地搜索 */
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var feedback = document.getElementById('searchFeedback');
+
+  var index = [];
+  document.querySelectorAll('main h2, main h3').forEach(function(h){
+    var sec = h.closest('section[id]');
+    if(!sec) return;
+    index.push({
+      text: (h.textContent || '').trim(),
+      extra: (sec.querySelector('p') ? sec.querySelector('p').textContent : '').trim(),
+      id: sec.id,
+      label: h.textContent.trim()
+    });
+  });
+
+  function doSearch(q){
+    q = (q || '').trim();
+    if(!q){
+      feedback.classList.remove('show');
+      feedback.textContent = '';
+      return;
+    }
+    var kw = q.toLowerCase();
+    var hits = index.filter(function(item){
+      return (item.text + ' ' + item.extra + ' ' + item.label).toLowerCase().indexOf(kw) > -1;
+    });
+    if(hits.length === 0){
+      feedback.innerHTML = '没有找到包含「<b>' + escapeHtml(q) + '</b>」的栏目，试试「手作」「骑行」「申请」「对照」等更短的关键词。';
+    }else{
+      var top = hits.slice(0,4);
+      feedback.innerHTML = '找到 ' + hits.length + ' 处，进入：' +
+        top.map(function(h){
+          return '<a href="/#' + h.id + '">' + escapeHtml(h.text) + '</a>';
+        }).join('、') +
+        (hits.length > 4 ? ' 等' : '');
+    }
+    feedback.classList.add('show');
+  }
+
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  if(form && input && feedback){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      doSearch(input.value);
+    });
+    input.addEventListener('input', function(){
+      if(input.value.trim().length >= 2){ doSearch(input.value); }
+      else { feedback.classList.remove('show'); }
+    });
+    document.addEventListener('click', function(e){
+      if(!form.contains(e.target)) feedback.classList.remove('show');
+    });
+    feedback.addEventListener('click', function(e){
+      if(e.target.tagName === 'A') feedback.classList.remove('show');
+    });
+  }
+
+  toggleTop();
+  setActive();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "铁粉空间微密圈免费",
+  "description": "整理免费粉丝圈子入口、内容分类与加入规则，含免费与付费差异对照及常见问答。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "免费圈子需要付费才能看全部内容吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要，但免费圈通常只开放一部分。日常碎片、投票、预告基本可见，系统教程与一对一答疑多放在下一层。判断方法：翻置顶目录，看标题数量与可点开的数量差多少。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "加入申请一直不通过是什么原因？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最常见的是回答过于笼统，例如只说想学习。管理员每天处理几十份申请，通常优先放行写了具体条目名的。其次看申请时间，部分圈子只在固定时段集中处理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "免费圈里的抽奖是真的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有真实抽奖，也有引流性质的。可核对的信号是公告写明开奖时间与名单公示位置，往期能找到中奖记录。只写关注即可参与、没有开奖日期的，参与价值有限。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有的圈子人数满了就不再放人？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "管理成本有上限。一个管理员能稳定回复的活跃成员通常在数百人量级，超过后提问会被淹没。满员改为申请制，本质是用门槛换回复质量。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "圈内内容可以转发到别的平台吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多数公告明确禁止搬运，尤其是图纸、配方、路书这类原创内容。转发前看公告里的禁止条目，没有写允许的，默认不允许。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "免费圈和粉丝群有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "圈子偏内容沉淀，帖子可检索、可回看；群偏即时聊天，信息滚动快、难查找。想补系统内容的看圈子，想找人即时聊天的进群。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "长期不发言会被移出吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "部分圈子会清理连续 60 天无互动的成员，尤其在满员后。规则通常写在公告末尾，清理前一般会有一次点名提醒。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+        </html>
